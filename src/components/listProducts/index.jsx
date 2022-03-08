@@ -1,6 +1,6 @@
 
 import { useSelector } from "react-redux";
-import { Container, ContentList, ContentTotal } from "./styles";
+import { Container, ContentList, ContentTotal, TitleCard } from "./styles";
 const ListProducts =()=>{
 
     const shapes = useSelector((store)=> store.value)
@@ -9,25 +9,29 @@ const ListProducts =()=>{
     }
     return(
                 <Container>
+                   
 
                     <ContentList>
-
+                            <TitleCard>
+                                <p>Produto</p>
+                                <p>Preco</p>
+                            </TitleCard>
                             {shapes.map((shape)=>(<> 
                             
-                                    <>
-                                        <p>{shape.name}</p>
+                                    <section>
                                         <img src={shape.image} alt="" />
+                                        <p>{shape.name}</p>
                                         <span>{shape.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
                                         
-                                    </>
+                                    </section>
                             </>
                             ))}
 
                     </ContentList>
                     <ContentTotal>
-                        <h3>Resumo dos pedidos</h3>
+                        <h2>Resumo dos pedidos</h2>
                         <div>
-                            <p>{shapes.length}Produtos</p>
+                            <p>{shapes.length} Produtos</p>
                             <span>{allProduct().toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
                         </div>
                         <button>Fazer pedido</button>

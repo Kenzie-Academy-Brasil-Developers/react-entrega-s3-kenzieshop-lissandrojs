@@ -12,13 +12,19 @@ export const Container = styled.div`
 export const Content = styled.div`
     display: flex;
     flex-direction:column ;
-    width:300px ;
+    width:275px ;
     height:300px ;
     background-color: grey ;
     border-radius:6px ;
+    margin-top:15px ;
+    @media (min-width:768px){
+        width:290px ;
+        height:290px ;
+
+    }
 
     button{
-        height:28px ;
+        height:20px ;
         border-radius:8px ;
         border:none ;
         background-color:#212125 ;
